@@ -15,15 +15,6 @@
  */
 
 // Your code goes here
-let message = "The PROMISE was RESOLVED";
-export const getPromise = new Promise((res, err) => {
-  setTimeout(() => {
-    res(message);
-  }, 1000);
-});
-getPromise
-  .then((response) => console.log(response))
-  .catch((err) => console.log(err));
 
 // === TEST YOURSELF ===
 // Once you're finished run the test with "npm run test-1"
