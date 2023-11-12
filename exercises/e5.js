@@ -22,6 +22,19 @@ export const attachTitle = () => {
 
 export const getPromise = () => {
   // Your code goes here...
+  const attachTitle = (arg) => {
+    // console.log("result: ", `"DR. ${arg}"`);
+    console.log("this is arg: ", arg);
+    return `DR. ${arg}`;
+  };
+  //   console.log(attachTitle("SomeName"));
+
+  const promise = new Promise((res, err) => res("MANHATTAN"));
+
+  return promise
+    .then((val) => attachTitle(val))
+    .then((val) => console.log(val))
+    .catch((err) => console.log(err));
 };
 
 // === TEST YOURSELF ===
