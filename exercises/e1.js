@@ -16,13 +16,17 @@
 
 // Your code goes here
 let message = "The PROMISE was RESOLVED";
-export const getPromise = new Promise((res, err) => {
+export const getPromise = new Promise((res) => {
   setTimeout(() => {
     res(message);
   }, 1000);
 });
 getPromise
-  .then((response) => console.log(response))
+  .then((response) => {
+
+    console.log(response)
+    return response
+  })
   .catch((err) => console.log(err));
 
 // === TEST YOURSELF ===

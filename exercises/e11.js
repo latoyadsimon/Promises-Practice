@@ -12,8 +12,12 @@
  * * Import fetch function from 'node-fetch' to use the fetch() function in code
  * * set the usersUrl constant to store the json-server 'users' endpoint path
 */
+//i am adding the import here
+import fetch from "node-fetch";
 
 export const usersUrl = 'http://localhost:3000/users/';
+
+// const data = (usersUrl) => fetch(usersUrl);
 
 /**
  * @task
@@ -26,10 +30,21 @@ export const usersUrl = 'http://localhost:3000/users/';
  * Example: const getLoginList = (data) => {<Your code>}
 */
 
-const getLoginList = () => {
+const getLoginList = (data) => {
   // Your code goes here...
+//  fetch(usersUrl);
+
+// console.log(data)
+// console.log(data.map((item) => item))
+// console.log(data.map((item) => item.login))
+let result = data.map((item) => item.login)
+console.log(result);
+return result;
 
 }
+//this is to see the data in the terminal
+// const data = [{login: 'login1'}, {login: 'login2'}]
+// getLoginList(data)
 
 /**
  * @task 
@@ -39,7 +54,7 @@ const getLoginList = () => {
 */
 
 // Your code goes here ...
-const getData;
+const getData = fetch(usersUrl)
 
 /**
  * @task 
@@ -53,7 +68,12 @@ const getData;
 */
 
 // Your code goes here ...
-export const result = getData;
+export const result = getData
+  .then((res) => res.json())
+  .then((data)=> {
+    console.log(data)
+    return getLoginList(data);
+  })
 
 
 // === TEST YOURSELF ===

@@ -30,8 +30,14 @@ export const getPromise = () => {
   const promise = new Promise((res, err) => res("MANHATTAN"));
 
   return promise
-    .then((val) => console.log(attachTitle(val)))
-    .catch((err) => console.log(err));
+    .then((val) => {
+      console.log(attachTitle(val));
+      return attachTitle(val);
+    } )
+    .catch((err) => {
+      console.log(err);
+      return err;
+    })
 };
 
 // === TEST YOURSELF ===

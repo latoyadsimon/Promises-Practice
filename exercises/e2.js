@@ -17,11 +17,11 @@
 
 export const getPromise = (boolean) => {
   //type code here
-  return new Promise((res, err) => {
+  return new Promise((res, rej) => {
     if (boolean === true) {
-      return res("The PROMISE was RESOLVED");
+      res("The PROMISE was RESOLVED");
     } else {
-      return err("The PROMISE was REJECTED");
+      rej("The PROMISE was REJECTED");
     }
   });
 };
@@ -39,7 +39,7 @@ export const handlePromise = (promise) => {
   // Your code goes here...
   console.log(promise);
   const onFulfilled = (data) => data;
-  const onRejected = (reason) => reason || "Uh Oh";
+  const onRejected = () => "Uh Oh";
   return promise.then(onFulfilled, onRejected);
 };
 

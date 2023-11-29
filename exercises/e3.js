@@ -18,12 +18,10 @@ export const getPromise = (num) => {
   // Your code goes here...
 
   console.log(num);
-  if (num === Math.round(num) && num === Number(num)) {
-    const promise = new Promise((res, err) => {
-      console.log("num that passes: ", num);
+  if (num % 1 === 0) {
+   return new Promise((res, err) => {
       res(num);
     });
-    return promise.then((data) => data);
   } else {
     return 0;
   }
@@ -43,11 +41,7 @@ export const getPromise = (num) => {
 export const updateSumValue = () => {
   // Your code goes here...
   let sum = 2;
-  console.log("this is getPromise function:", getPromise());
-  getPromise(120).then((response) => {
-    console.log("in the promise: ", (sum += response));
-    return (sum += response);
-  });
+  getPromise(120).then((response) => sum += response);
   sum += 8;
   return sum;
 };
