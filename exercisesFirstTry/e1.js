@@ -15,14 +15,17 @@
  */
 
 // Your code goes here
+let message = "The PROMISE was RESOLVED";
 export const getPromise = new Promise((res) => {
   setTimeout(() => {
-    res("The PROMISE was RESOLVED");
+    res(message);
   }, 1000);
-})
+});
+getPromise
   .then((response) => {
-    console.log(response);
-    return response;
+
+    console.log(response)
+    return response
   })
   .catch((err) => console.log(err));
 

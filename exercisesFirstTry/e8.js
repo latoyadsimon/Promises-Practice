@@ -11,9 +11,8 @@
 //   resolve("The PROMISE was RESOLVED");
 // }).then((data) => data);
 
-export const promiseResolved = Promise.resolve("The PROMISE was RESOLVED").then(
-  (data) => data
-);
+export const promiseResolved = Promise.resolve("The PROMISE was RESOLVED");
+
 
 // === REJECTED PROMISE
 // Update the promiseResolved variable to use the shortcut syntax
@@ -21,9 +20,7 @@ export const promiseResolved = Promise.resolve("The PROMISE was RESOLVED").then(
 //   reject("The PROMISE was REJECTED");
 // }).catch((err) => err);
 
-export var promiseRejected = Promise.reject("The PROMISE was REJECTED").catch(
-  (err) => err
-);
+export var promiseRejected = Promise.resolve("The PROMISE was REJECTED");
 
 // export const promiseCatch = Promise.catch(err.message);
 

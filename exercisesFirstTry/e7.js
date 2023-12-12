@@ -21,13 +21,19 @@
 
 export function parsePromised(json) {
   // Your code goes here...
-  return new Promise((res, rej) => {
-    try {
-      res(JSON.parse(json));
-    } catch (err) {
-      rej(err);
-    }
-  });
+  //   return  new Promise((res, rej) => {
+  //     try {
+  //       res(JSON.parse(json))
+  //     }catch(rej) {
+  //     throw console.log(rej)
+  //   }
+  // })
+
+  try {
+    return new Promise((res) => res(JSON.parse(json)));
+  } catch (e) {
+    return e;
+  }
 }
 
 /**

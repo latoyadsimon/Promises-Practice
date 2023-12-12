@@ -27,9 +27,17 @@ export const attachTitle = (arg) => {
 export const getPromise = () => {
   // Your code goes here...
 
-  return new Promise((res) => res("MANHATTAN"))
-    .then((val) => attachTitle(val))
-    .then((data) => console.log(data));
+  const promise = new Promise((res, err) => res("MANHATTAN"));
+
+  return promise
+    .then((val) => {
+      console.log(attachTitle(val));
+      return attachTitle(val);
+    } )
+    .catch((err) => {
+      console.log(err);
+      return err;
+    })
 };
 
 // === TEST YOURSELF ===

@@ -16,16 +16,18 @@
 
 export const handlePromise = () => {
   // Your code goes here...
-  //replacing first argument with underscore to let us know it is there but we are not using it.
-  let promise = new Promise((_, reject) => reject("REJECTED"));
+  let promise = new Promise((resolve, reject) => reject('REJECTED'));
   return promise
     .catch((reason) => {
-      console.log(reason);
+
+      console.log(reason)
+      return reason;
     })
     .finally(() => {
-      console.log("This promise is finished!");
+
+      console.log('This promise is finished!');
       return "This promise is finished!";
-    });
+    })
 };
 
 // === TEST YOURSELF ===

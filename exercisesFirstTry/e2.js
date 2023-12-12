@@ -37,11 +37,10 @@ export const getPromise = (boolean) => {
 
 export const handlePromise = (promise) => {
   // Your code goes here...
-
-  return promise.then(
-    (data) => data,
-    () => "Uh Oh"
-  );
+  console.log(promise);
+  const onFulfilled = (data) => data;
+  const onRejected = () => "Uh Oh";
+  return promise.then(onFulfilled, onRejected);
 };
 
 // === TEST YOURSELF ===
