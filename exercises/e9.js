@@ -72,6 +72,11 @@ export const promise = Promise.resolve(iterate(1))
   .then(iterate)
   .then(alwaysThrows)
   .then(iterate)
+  .then(iterate)
+  .then(iterate)
+  .then(iterate)
+  .then(iterate)
+  .then(iterate)
   .catch(onReject);
 
 // === TEST YOURSELF ===

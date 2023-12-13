@@ -25,7 +25,9 @@ export const promiseArr = [promise1, promise2, promise3, promise4];
 
 // Your code goes here...
 // export const handlePromise1 = Promise.any(promiseArr).catch((e) => e);
-export const handlePromise1 = Promise.all(promiseArr).catch((err) => err);
+export const handlePromise1 = Promise.all(promiseArr)
+  .then((value) => value)
+  .catch((err) => err);
 
 /**
  * @task

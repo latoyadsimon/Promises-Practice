@@ -17,14 +17,12 @@
 export const handlePromise = () => {
   // Your code goes here...
   //replacing first argument with underscore to let us know it is there but we are not using it.
-  let promise = new Promise((_, reject) => reject("REJECTED"));
-  return promise
+  return new Promise((_, reject) => reject("REJECTED"))
     .catch((reason) => {
       console.log(reason);
     })
     .finally(() => {
       console.log("This promise is finished!");
-      return "This promise is finished!";
     });
 };
 
